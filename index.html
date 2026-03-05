@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="icon/favicon.ico">
+<title>Character Selector😽</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffcc70,#ff8177);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    width:350px;
+}
+
+h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    outline:none;
+    cursor:pointer;
+}
+
+img{
+    margin-top:25px;
+    width:250px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:transform 0.3s;
+}
+
+img:hover{
+    transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Select Character🐈</h2>
+
+<select id="selectcharacter">
+    <option value="Garfield">Garfield</option>
+    <option value="Odie">Odie</option>
+    <option value="Jon">Jon</option>
+    <option value="Pooky">Pooky</option>
+    <option value="Nermal">Nermal</option>
+</select>
+
+<img id="characterImage" src="images/Garfield.jpg" alt="Character Image">
+
+</div>
+
+<script>
+
+const selectElement = document.getElementById('selectcharacter');
+const characterImage = document.getElementById('characterImage');
+
+selectElement.addEventListener('change', function() {
+    const selectedCharacter = this.value;
+    characterImage.src = "images/" + selectedCharacter + ".jpg";
+});
+
+</script>
+
+</body>
+</html>
